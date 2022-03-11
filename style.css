@@ -19,6 +19,45 @@ body {
     font-weight: 400;
 }
 
+
+/* Beginning code For cursor inside a circle */
+
+.circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+.circle::before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    border: 1.5px solid #0c1110;
+    border-radius: 50%;
+    background: transparent;
+    transform: translate(-50%, -50%);
+    animation: pulse 300ms ease-in-out alternate infinite
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+@keyframes pulse {
+    from {
+        transform: translate(-50%, -50%) scale(.8);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+
+/* End of code For cursor inside a circle */
+
 .left-container {
     height: 100vh;
     background-image: linear-gradient(#0277BD, #03A9F4);
