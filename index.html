@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Expense Manager</title>
+    <title>My | Expense Manager</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./image/expense.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -22,11 +23,14 @@
     <!-- End of code For cursor inside a circle  -->
     <div class="row">
         <div class="col-4 left-container">
+            <div class="gmail" onclick="myLink()">
+                <a href="https://github.com/idowuadekale" target="_blank" class="message-btn right message">GitHub Page</a>
+            </div>
             <div class="month-container">
                 <div class="header fs-white">Your Budget</div>
                 <div id="current-month" class="sub-text fs-white"></div>
                 <div class="budget-container p-2 mt-4">
-                    <span id="month-budget" class="month-amount">₹ 0</span>
+                    <span id="month-budget" class="month-amount">₦ 0</span>
                 </div>
             </div>
 
@@ -38,10 +42,9 @@
             <div class="calc-container">
                 <div class="header fs-dark-grey">Track Your Budget</div>
                 <div class="dropdown open">
-                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Expense Type
+                    <button onclick="myFunction()" class="dropbtn"> Expense Type
                 </button>
-                    <div class="dropdown-menu">
+                    <div id="myDropdown" class="dropdown-content">
                         <a class="dropdown-item" id="type-savings">Savings</a>
                         <a class="dropdown-item" id="type-expense">Expense</a>
                         <a class="dropdown-item" id="type-investment">Investment</a>

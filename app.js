@@ -184,11 +184,11 @@ let UIController = (() => {
             element = HTMLStrings.expenseList;
 
             if (inputObj['expenseType'] === 'savings') {
-                html = '<div class="bottom-border"> <div class="row expense-row"><div class="col-2 expense-date fs-15">' + inputObj['date'] + ' </div><div class="col-8 expense-text fs-15"> ' + inputObj['description'] + ' </div><div class="col-2 expense-value expense-saving fs-15"> ₹ ' + this.numberFormat(inputObj['value']) + ' </div></div>'
+                html = '<div class="bottom-border"> <div class="row expense-row"><div class="col-2 expense-date fs-15">' + inputObj['date'] + ' </div><div class="col-8 expense-text fs-15"> ' + inputObj['description'] + ' </div><div class="col-2 expense-value expense-saving fs-15"> ₦ ' + this.numberFormat(inputObj['value']) + ' </div></div>'
             } else if (inputObj['expenseType'] === 'expense') {
-                html = '<div class="bottom-border"> <div class="row expense-row"><div class="col-2 expense-date fs-15">' + inputObj['date'] + ' </div><div class="col-8 expense-text fs-15"> ' + inputObj['description'] + ' </div><div class="col-2 expense-value expense-cost fs-15"> ₹ ' + this.numberFormat(inputObj['value']) + ' </div></div>'
+                html = '<div class="bottom-border"> <div class="row expense-row"><div class="col-2 expense-date fs-15">' + inputObj['date'] + ' </div><div class="col-8 expense-text fs-15"> ' + inputObj['description'] + ' </div><div class="col-2 expense-value expense-cost fs-15"> ₦ ' + this.numberFormat(inputObj['value']) + ' </div></div>'
             } else if (inputObj['expenseType'] === 'investment') {
-                html = '<div class="bottom-border"> <div class="row expense-row"><div class="col-2 expense-date fs-15">' + inputObj['date'] + ' </div><div class="col-8 expense-text fs-15"> ' + inputObj['description'] + ' </div><div class="col-2 expense-value expense-investment fs-15"> ₹ ' + this.numberFormat(inputObj['value']) + ' </div></div>'
+                html = '<div class="bottom-border"> <div class="row expense-row"><div class="col-2 expense-date fs-15">' + inputObj['date'] + ' </div><div class="col-8 expense-text fs-15"> ' + inputObj['description'] + ' </div><div class="col-2 expense-value expense-investment fs-15"> ₦ ' + this.numberFormat(inputObj['value']) + ' </div></div>'
             }
 
             // Add the new element
@@ -200,7 +200,7 @@ let UIController = (() => {
         },
 
         updateOverallTotal(totalValue) {
-            document.querySelector(HTMLStrings.monthBudget).textContent = "₹ " + this.numberFormat(totalValue);
+            document.querySelector(HTMLStrings.monthBudget).textContent = "₦ " + this.numberFormat(totalValue);
 
             if (totalValue > 0) {
                 if (document.querySelector(HTMLStrings.monthBudget).classList.contains('expense-cost')) {
@@ -286,3 +286,28 @@ let UIController = (() => {
     init();
 
 })(UIController, ExpenseController);
+
+// ########################################################### Dropdown
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    // #################################################### Git Page
+function myLink() {
+    alert("You are going to Idowu Adekale Github");
+}
